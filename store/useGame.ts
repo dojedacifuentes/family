@@ -85,7 +85,7 @@ export const useGame = create<Store>()(
       ajustarTrauma: (delta) =>
         set((s) => ({ personaje: { ...s.personaje, trauma: Math.max(0, Math.min(100, s.personaje.trauma + delta)) } })),
       finalizar: (texto) => set({ finalizado: true, epilogo: texto }),
-      reset: () => set({ ...INIT, creado: Date.now() }),
+      reset: () => set({ ...INIT, creado: Date.now(), finalizado: false, epilogo: undefined }),
     }),
     {
       name: "derecho-familia-rpg-save",
